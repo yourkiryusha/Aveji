@@ -1,0 +1,45 @@
+.header {
+  padding-top: 12px;
+
+  &__inner {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+  }
+
+  &__menu {
+    grid-column-start: 9;
+
+    &-list {
+      display: flex;
+      flex-direction: column;
+      row-gap: 8px;
+    }
+
+    &-link {
+      position: relative;
+      &:hover {
+        &::after {
+          width: 100%;
+        }
+      }
+
+      &::after {
+        content: '';
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 0;
+        height: 1px;
+        background-color: currentColor;
+        transition-duration: 0.3s;
+      }
+    }
+  }
+
+  &__contacts {
+    grid-column-start: 11;
+    text-align: right;
+    white-space: nowrap;
+    transform: translate(80%, 0%);
+  }
+}

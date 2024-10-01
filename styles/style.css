@@ -1,0 +1,450 @@
+@charset "UTF-8";
+/**
+  Нормализация блочной модели
+ */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/**
+  Убираем внутренние отступы слева тегам списков,
+  у которых есть атрибут class
+ */
+:where(ul, ol):where([class]) {
+  padding-left: 0;
+}
+
+/**
+  Убираем внешние отступы body и двум другим тегам,
+  у которых есть атрибут class
+ */
+body,
+:where(blockquote, figure):where([class]) {
+  margin: 0;
+}
+
+/**
+  Убираем внешние отступы вертикали нужным тегам,
+  у которых есть атрибут class
+ */
+:where(h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+ol,
+dl):where([class]) {
+  margin-block: 0;
+}
+
+:where(dd[class]) {
+  margin-left: 0;
+}
+
+:where(fieldset[class]) {
+  margin-left: 0;
+  padding: 0;
+  border: none;
+}
+
+/**
+  Убираем стандартный маркер маркированному списку,
+  у которого есть атрибут class
+ */
+:where(ul[class]) {
+  list-style: none;
+}
+
+/**
+  Обнуляем вертикальные внешние отступы параграфа,
+  объявляем локальную переменную для внешнего отступа вниз,
+  чтобы избежать взаимодействие с более сложным селектором
+ */
+p {
+  --paragraphMarginBottom: 24px;
+  margin-block: 0;
+}
+
+/**
+  Внешний отступ вниз для параграфа без атрибута class,
+  который расположен не последним среди своих соседних элементов
+ */
+p:where(:not([class]):not(:last-child)) {
+  margin-bottom: var(--paragraphMarginBottom);
+}
+
+/**
+  Упрощаем работу с изображениями
+ */
+img {
+  display: block;
+  max-width: 100%;
+}
+
+/**
+  Наследуем свойства шрифт для полей ввода
+ */
+input,
+textarea,
+select,
+button {
+  font: inherit;
+}
+
+html {
+  /**
+    Пригодится в большинстве ситуаций
+    (когда, например, нужно будет "прижать" футер к низу сайта)
+   */
+  height: 100%;
+  /**
+    Плавный скролл
+   */
+  scroll-behavior: smooth;
+}
+
+body {
+  /**
+    Пригодится в большинстве ситуаций
+    (когда, например, нужно будет "прижать" футер к низу сайта)
+   */
+  min-height: 100%;
+  /**
+    Унифицированный интерлиньяж
+   */
+  line-height: 1.5;
+}
+
+/**
+  Приводим к единому цвету svg-элементы
+ */
+svg *[fill] {
+  fill: currentColor;
+}
+
+svg *[stroke] {
+  stroke: currentColor;
+}
+
+/**
+  Чиним баг задержки смены цвета при взаимодействии с svg-элементами
+ */
+svg * {
+  transition-property: fill, stroke;
+}
+
+/**
+  Удаляем все анимации и переходы для людей,
+  которые предпочитают их не использовать
+ */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+@font-face {
+  font-family: "Roboto Regular";
+  src: url("../fonts/Roboto-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Helvetica Regular";
+  src: url("../fonts/Helvetica-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Roboto Medium";
+  src: url("../fonts/Roboto-Medium.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Helvetica Bold";
+  src: url("../fonts/Helvetica-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+:root {
+  --color-dark: #212529;
+  --color-light: #FFFFFF;
+  --color-accent: #DDD7C0;
+  --font-family-base: "Roboto Regular";
+  --container-width: 1376px;
+  --container-padding-x: 15px;
+  --section-padding-y: 60px;
+  --transition-duration: 0.2s;
+}
+
+.container {
+  max-width: calc(var(--container-width) + var(--container-padding-x) * 2);
+  margin-inline: auto;
+  padding-inline: var(--container-padding-x);
+}
+
+.visually-hidden {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  margin: -1px !important;
+  border: 0 !important;
+  padding: 0 !important;
+  white-space: nowrap !important;
+  clip-path: inset(100%) !important;
+  clip: rect(0 0 0 0) !important;
+  overflow: hidden !important;
+}
+
+body {
+  font-family: var(--font-family-base), sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.28;
+  color: var(--color-dark);
+  background-color: var(--color-light);
+}
+
+a,
+button,
+input {
+  transition-duration: var(--transition-duration);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+h1 {
+  font-size: clamp(32px, 5vw, 72px);
+}
+
+h2 {
+  font-size: clamp(28px, 3.3333333333vw, 48px);
+}
+
+h3 {
+  font-size: clamp(24px, 2.5vw, 36px);
+}
+
+.title {
+  font-family: "Helvetica Regular", sans-serif;
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+.header {
+  padding-top: 12px;
+}
+.header__inner {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+}
+.header__menu {
+  grid-column-start: 9;
+}
+.header__menu-list {
+  display: flex;
+  flex-direction: column;
+  row-gap: 8px;
+}
+.header__menu-link {
+  position: relative;
+}
+.header__menu-link:hover::after {
+  width: 100%;
+}
+.header__menu-link::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background-color: currentColor;
+  transition-duration: 0.3s;
+}
+.header__contacts {
+  grid-column-start: 11;
+  text-align: right;
+  white-space: nowrap;
+  transform: translate(80%, 0%);
+}
+
+.hero {
+  padding: 40px 0 var(--section-padding-y);
+}
+.hero__inner {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  row-gap: 40px;
+}
+.hero__title {
+  grid-column: 7 span;
+  text-transform: uppercase;
+}
+.hero__description {
+  grid-column: 4 span;
+  grid-row: 2/3;
+}
+.hero__link {
+  position: relative;
+  grid-column: 11/13;
+  max-width: 164px;
+  align-self: end;
+  transform: translate(40%);
+}
+.hero__link:hover {
+  color: var(--color-accent);
+}
+.hero__link:hover::after {
+  width: 0;
+}
+.hero__link::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: currentColor;
+  transition-duration: 0.3s;
+}
+.hero__img-left {
+  grid-column: 3 span;
+  grid-row: 3/4;
+  align-self: end;
+}
+.hero__img-right {
+  grid-column: 7/13;
+  grid-row: 2/4;
+}
+
+.about {
+  padding: var(--section-padding-y) 0;
+}
+.about__inner {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  row-gap: 40px;
+}
+.about__title {
+  grid-column: 1/6;
+}
+.about__list {
+  grid-column: 7/11;
+  padding-top: 29px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 16px;
+}
+.about__item, .about__advantages-description {
+  font-size: 16px;
+  line-height: 1.4;
+}
+.about__advantages-list {
+  grid-column: 7/9;
+  grid-row: 2/3;
+  display: flex;
+  flex-direction: column;
+  row-gap: 24px;
+}
+
+.steps {
+  padding: var(--section-padding-y) 0;
+}
+.steps__inner {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  row-gap: 40px;
+}
+.steps__title {
+  grid-column: 1/5;
+}
+.steps__description {
+  grid-column: 7/10;
+  padding-top: 22px;
+}
+.steps__list {
+  grid-column: 7/13;
+  grid-row: 2/3;
+  display: flex;
+  flex-direction: column;
+  row-gap: 24px;
+}
+.steps__item {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--color-dark);
+}
+.steps__item-title {
+  grid-column: 1/3;
+}
+.steps__item-description {
+  grid-column: 4/7;
+  font-size: 16px;
+  line-height: 1.4;
+}
+
+.projects {
+  padding: var(--section-padding-y) 0;
+}
+.projects__inner {
+  display: flex;
+  flex-direction: column;
+  row-gap: 32px;
+}
+.projects__list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+.projects__item {
+  position: relative;
+  overflow: hidden;
+}
+.projects__item:hover .projects__item-img {
+  transform: scale(1.2);
+}
+.projects__item:hover .projects__item-link {
+  visibility: visible;
+  transform: translate(0);
+}
+.projects__item:hover .projects__item-link,
+.projects__item:hover .projects__item-img {
+  transition: all 0.5s ease;
+}
+.projects__item-link {
+  display: flex;
+  justify-content: space-between;
+  padding: 22px 20px;
+  align-items: center;
+  color: var(--color-light);
+  background: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  visibility: hidden;
+  transform: translate(0%, 100%);
+}
+.projects__item-link-text {
+  font-size: 16px;
+  line-height: 1.4;
+}
+
+/*# sourceMappingURL=style.css.map */
