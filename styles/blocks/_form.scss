@@ -1,0 +1,87 @@
+.form {
+  padding: var(--section-padding-y) 0;
+
+  &__inner {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+  }
+
+  &__img {
+    grid-column: 1 / 6;
+  }
+
+  &__content {
+    grid-column: 7 / 13;
+    display: flex;
+    flex-direction: column;
+    row-gap: 40px;
+
+    &-text {
+      display: flex;
+      flex-direction: column;
+      row-gap: 32px;
+    }
+
+    &-form {
+      margin-top: 32px;
+    }
+
+    &-apps {
+      display: flex;
+      column-gap: 8px;
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    row-gap: 16px;
+  }
+
+  &__item {
+    position: relative;
+    font-size: 16px;
+
+    &-label {
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    &-input {
+      width: 100%;
+      padding-bottom: 12px;
+      border: none;
+      border-bottom: 1px solid var(--color-dark);
+
+      &:focus {
+        outline: none;
+        border-bottom: 1px solid var(--color-accent);
+      }
+
+      &:focus ~ .form__item-label,
+      &:valid + .form__item-label {
+        top: -14px;
+        font-size: 14px;
+        transition-duration: 0.5s;
+      }
+    }
+  }
+
+  &__button {
+    margin-top: 24px;
+    padding: 12px 20px;
+    border: none;
+    background-color: var(--color-dark);
+    color: var(--color-light);
+    font-size: 16px;
+    line-height: 1.4;
+    cursor: pointer;
+
+    &:hover {
+      background-color: var(--color-accent);
+      color: var(--color-dark);
+      border: none;
+    }
+  }
+}
