@@ -1,13 +1,26 @@
 .form {
   padding: var(--section-padding-y) 0;
 
+  @include mobile {
+    padding: var(--section-padding-y-mobile) 0;
+  }
+
   &__inner {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
+
+    @include mobile {
+      display: flex;
+      flex-direction: column;
+    }
   }
 
   &__img {
     grid-column: 1 / 6;
+
+    @include mobile {
+      display: none;
+    }
   }
 
   &__content {
@@ -16,10 +29,18 @@
     flex-direction: column;
     row-gap: 40px;
 
+    @include mobile {
+      row-gap: 32px;
+    }
+
     &-text {
       display: flex;
       flex-direction: column;
       row-gap: 32px;
+
+      @include mobile {
+        row-gap: 20px;
+      }
     }
 
     &-form {

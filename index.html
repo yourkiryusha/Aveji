@@ -17,20 +17,23 @@
             <nav class="header__menu">
                 <ul class="header__menu-list">
                     <li class="header__menu-item">
-                        <a href="#!" class="header__menu-link">О нас</a>
+                        <a href="#" class="header__menu-link">О нас</a>
                     </li>
                     <li class="header__menu-item">
-                        <a href="#!" class="header__menu-link">Проекты</a>
+                        <a href="#" class="header__menu-link">Проекты</a>
                     </li>
                     <li class="header__menu-item">
-                        <a href="#!" class="header__menu-link">Материалы</a>
+                        <a href="#" class="header__menu-link">Материалы</a>
                     </li>
                     <li class="header__menu-item">
-                        <a href="#!" class="header__menu-link">Отзывы</a>
+                        <a href="#" class="header__menu-link">Отзывы</a>
                     </li>
                 </ul>
             </nav>
-            <a href="#!" class="header__contacts">+7 999 999 99 99</a>
+            <a href="#" class="header__contacts">+7 999 999 99 99</a>
+            <button class="header__burger-button burger-button visible-mobile" type="button" onclick="mobileOverlay.showModal()">
+                <span class="visually-hidden">Open navigation menu</span>
+            </button>
         </div>
     </header>
     <main class="content">
@@ -42,15 +45,18 @@
                 <p class="hero__description">
                     Мы можем произвести любую мебель для вашего проекта и найти производственное решение любой задумки.
                 </p>
-                <a href="#!" class="hero__link">ЗАКАЗАТЬ ПРОЕКТ</a>
+                <a href="#" class="hero__link">ЗАКАЗАТЬ ПРОЕКТ</a>
                 <img src="./img/hero/1.jpg" alt="Room" class="hero__img-left" width="329" height="493" loading="lazy">
                 <img src="./img/hero/2.jpg" alt="Room" class="hero__img-right" width="687" height="809" loading="lazy">
             </div>
         </section>
         <section class="about">
             <div class="about__inner container">
-                <h2 class="about__title title">
+                <h2 class="about__title title visible-desktop">
                     Более 5 лет создаем мебель для вашего комфорта
+                </h2>
+                <h2 class="about__title title visible-mobile">
+                    О компании
                 </h2>
                 <ul class="about__list">
                     <li class="about__item">
@@ -68,7 +74,8 @@
                     </li>
                     <li class="about__item">
                         <p class="about__item-description">
-                            В качестве материалов мы используем натуральные — стекло, дерево, бетон, камень, металл и эпоксидную<br>
+                            В качестве материалов мы используем натуральные —<br>
+                            стекло, дерево, бетон, камень, металл и эпоксидную<br>
                             смолу.
                         </p>
                     </li>
@@ -103,10 +110,10 @@
                             Идея
                         </h3>
                         <p class="steps__item-description">
-                            Клиент приходит к нам с идеей. Это может<br>
-                            быть изображение/ эскиз или другой<br>
-                            референс. А мы думаем над тем, как это<br>
-                            реализовать, делаем технические чертежи<br>
+                            Клиент приходит к нам с идеей. Это может
+                            быть изображение/ эскиз или другой
+                            референс. А мы думаем над тем, как это
+                            реализовать, делаем технические чертежи
                             и предлагаем решения по материалам.
                         </p>
                     </li>
@@ -115,11 +122,11 @@
                             Техническое задание
                         </h3>
                         <p class="steps__item-description">
-                            Вместе с клиентом формулируем<br>
-                            корректное ТЗ, которое включает в себя<br>
-                            визуализацию изделия, эскизный чертёж<br>
-                            с габаритами, информацию по материалам<br>
-                            и отделке, срок реализации проекта<br>
+                            Вместе с клиентом формулируем
+                            корректное ТЗ, которое включает в себя
+                            визуализацию изделия, эскизный чертёж
+                            с габаритами, информацию по материалам
+                            и отделке, срок реализации проекта
                             и другие обязательные пункты.
                         </p>
                     </li>
@@ -128,11 +135,11 @@
                             Коммерческое предложение
                         </h3>
                         <p class="steps__item-description">
-                            Предпочтительно используем<br>
-                            натуральные материалы. Но любую смету<br>
-                            можем оптимизировать, упростив<br>
-                            материалы или конструктив. Сможем<br>
-                            подстроиться под бюджет клиента<br>
+                            Предпочтительно используем
+                            натуральные материалы. Но любую смету
+                            можем оптимизировать, упростив
+                            материалы или конструктив. Сможем
+                            подстроиться под бюджет клиента
                             и согласуем коммерческое предложение.
                         </p>
                     </li>
@@ -142,10 +149,10 @@
                             рабочего проекта
                         </h3>
                         <p class="steps__item-description">
-                            Создадим рабочую документацию<br>
-                            и чертежи. Это фундамент качественного<br>
-                            производства. На этом этапе утверждаем<br>
-                            с клиентом все габариты и материалы,<br>
+                            Создадим рабочую документацию
+                            и чертежи. Это фундамент качественного
+                            производства. На этом этапе утверждаем
+                            с клиентом все габариты и материалы,
                             чертежи и приступаем к производству.
                         </p>
                     </li>
@@ -155,10 +162,10 @@
                             и монтаж
                         </h3>
                         <p class="steps__item-description">
-                            Производство занимает от 15 рабочих дней,<br>
-                            в зависимости от сложности<br>
-                            и объёма. Монтажом тоже занимаемся<br>
-                            самостоятельно. Ведь мы это сделаем<br>
+                            Производство занимает от 15 рабочих дней,
+                            в зависимости от сложности
+                            и объёма. Монтажом тоже занимаемся
+                            самостоятельно. Ведь мы это сделаем
                             быстро и аккуратно.
                         </p>
                     </li>
@@ -374,5 +381,28 @@
             </div>
         </div>
     </footer>
+    <dialog class="mobile-overlay visible-mobile" id="mobileOverlay">
+        <form class="mobile-overlay__close-button-wrapper" method="dialog">
+            <button class="mobile-overlay__close-button cross-button" type="submit">
+                <span class="visually-hidden">Open navigation menu</span>
+            </button>
+        </form>
+        <div class="mobile-overlay__body">
+            <ul class="mobile-overlay__list">
+                <li class="mobile-overlay__item">
+                    <a href="#" class="mobile-overlay__link">О нас</a>
+                </li>
+                <li class="mobile-overlay__item">
+                    <a href="#" class="mobile-overlay__link">Проекты</a>
+                </li>
+                <li class="mobile-overlay__item">
+                    <a href="#" class="mobile-overlay__link">Материалы</a>
+                </li>
+                <li class="mobile-overlay__item">
+                    <a href="#" class="mobile-overlay__link">Отзывы</a>
+                </li>
+            </ul>
+        </div>
+    </dialog>
 </body>
 </html>

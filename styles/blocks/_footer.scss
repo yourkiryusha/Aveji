@@ -1,9 +1,20 @@
 .footer {
   padding: var(--section-padding-y) 0 16px;
 
+  @include mobile {
+    padding: var(--section-padding-y-mobile) 0 10px;
+  }
+
   &__inner {
     display: flex;
     justify-content: space-between;
+
+    @include mobile {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      row-gap: 25px;
+    }
   }
 
   &__copyright {
@@ -14,11 +25,21 @@
       flex-direction: column;
       row-gap: 4px;
     }
+
+    &-text {
+      @include mobile {
+        text-align: center;
+      }
+    }
   }
 
   &__privacy {
     display: flex;
     align-self: flex-end;
+
+    @include mobile {
+      align-self: center;
+    }
 
     &-list {
       display: flex;
@@ -53,6 +74,10 @@
     display: flex;
     align-self: flex-end;
     text-transform: uppercase;
+
+    @include mobile {
+      align-self: center;
+    }
 
     &-list {
       display: flex;

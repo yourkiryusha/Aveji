@@ -5,11 +5,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6751d448-3e7d-4817-b1d0-d3dd8a9f9d9a" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/styles/blocks/_footer.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/styles/blocks/_form.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/styles/blocks/_testimonials.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/styles/_media.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/styles/blocks/_burger-button.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/styles/blocks/_cross-button.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/styles/blocks/_mobile-overlay.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/styles/_mixins.scss" beforeDir="false" afterPath="$PROJECT_DIR$/styles/_mixins.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/styles/_utils.scss" beforeDir="false" afterPath="$PROJECT_DIR$/styles/_utils.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/styles/_variables.scss" beforeDir="false" afterPath="$PROJECT_DIR$/styles/_variables.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/styles/blocks/_about.scss" beforeDir="false" afterPath="$PROJECT_DIR$/styles/blocks/_about.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/styles/blocks/_footer.scss" beforeDir="false" afterPath="$PROJECT_DIR$/styles/blocks/_footer.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/styles/blocks/_form.scss" beforeDir="false" afterPath="$PROJECT_DIR$/styles/blocks/_form.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/styles/blocks/_header.scss" beforeDir="false" afterPath="$PROJECT_DIR$/styles/blocks/_header.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/styles/blocks/_hero.scss" beforeDir="false" afterPath="$PROJECT_DIR$/styles/blocks/_hero.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/styles/blocks/_projects.scss" beforeDir="false" afterPath="$PROJECT_DIR$/styles/blocks/_projects.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/styles/blocks/_steps.scss" beforeDir="false" afterPath="$PROJECT_DIR$/styles/blocks/_steps.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/styles/blocks/_testimonials.scss" beforeDir="false" afterPath="$PROJECT_DIR$/styles/blocks/_testimonials.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/styles/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/styles/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/styles/style.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/styles/style.css.map" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/styles/style.scss" beforeDir="false" afterPath="$PROJECT_DIR$/styles/style.scss" afterDir="false" />
@@ -61,7 +73,9 @@
       <option name="presentableId" value="Default" />
       <updated>1727799043831</updated>
       <workItem from="1727799046220" duration="20815000" />
-      <workItem from="1727863377377" duration="9325000" />
+      <workItem from="1727863377377" duration="9577000" />
+      <workItem from="1727905223672" duration="2118000" />
+      <workItem from="1727991063602" duration="9458000" />
     </task>
     <servers />
   </component>
